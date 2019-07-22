@@ -1,4 +1,4 @@
-package com.phptravel.PHPTravel;
+package phptravel;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
