@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="phptravel">
     <classes>
-      <class name="com.phptravel.PHPTravel.AppTest"/>
+      <class name="runners.TestRunner"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

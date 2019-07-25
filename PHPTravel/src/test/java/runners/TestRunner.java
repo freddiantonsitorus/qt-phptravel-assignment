@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 	@CucumberOptions(
 	features = "src/test/resources/features", //folder path
-	glue = {"phptravel"}) //package name
+	glue = {"stepdefs"}) //package name
 	
 	public class TestRunner extends AbstractTestNGCucumberTests {
 		
