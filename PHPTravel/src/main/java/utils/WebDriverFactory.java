@@ -5,22 +5,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverFactory {
 	
-	private static WebDriverFactory instance = new WebDriverFactory();
-	private static WebDriver driver = newWebDriver();
-	
-	public static WebDriverFactory getInstance( ) {
-		return instance;
-	}
-	
-	public WebDriver getWebDriver( ) {
-		return driver;
-	}
-	
-	public void removeDriver( ) {
+	public static void removeDriver(WebDriver driver) {
+		driver.close();
 		driver.quit();
 	}
 			
-	private static WebDriver newWebDriver() {
+	public static WebDriver newWebDriver() {
 		System.setProperty("webdriver.chrome.driver", "D:\\Installer\\Automation\\WebDriver\\Working WebDriver package\\WebDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		return driver;

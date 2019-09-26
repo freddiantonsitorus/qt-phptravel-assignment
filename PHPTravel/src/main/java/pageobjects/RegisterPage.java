@@ -1,51 +1,71 @@
 package pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage extends ABasePageObjects {
+public class RegisterPage {
 
-	public RegisterPage() {
-		initObjects(this);
-		
-	}
+	WebDriver driver;
+
+public RegisterPage(WebDriver driver) {
+	this.driver = driver;
+	PageFactory.initElements(driver, this);
+	
+}
 	
 	@FindBy(xpath="//input[@placeholder='First Name']")
-	WebElement firstname;
+	WebElement firstnametxt;
 	
 	@FindBy(xpath="//input[@placeholder='Last Name']")
-	WebElement lastname;
+	WebElement lastnametxt;
 	
 	@FindBy(xpath="//input[@placeholder='Mobile Number']")
-	WebElement mobilenumber;
+	WebElement mobilenumbertxt;
 	
 	@FindBy(xpath="//input[@placeholder='Email']")
-	WebElement email;
+	WebElement emailtxt;
 	
 	@FindBy(xpath="//input[@placeholder='Password']")
-	WebElement password;
+	WebElement passwordtxt;
 	
 	@FindBy(xpath="//input[@placeholder='Confirm Password']")
-	WebElement confirmpassword;
+	WebElement confirmpasswordtxt;
 	
 	@FindBy(xpath="//button[@class='signupbtn btn_full btn btn-action btn-block btn-lg']")
 	WebElement signup;
 	
-	public void inputdata() {
-		
-		firstname.sendKeys("freddi5");
-    	lastname.sendKeys("sitorus5");
-    	mobilenumber.sendKeys("mobile5");
-    	email.sendKeys("freddi5@mailinator.com");
-    	password.sendKeys("password5");
-    	confirmpassword.sendKeys("password5");
-    	
+	public void inputFirstName(String firstname) {
+		firstnametxt.sendKeys(firstname);
+
 	}
-	
+	public void inputLastName(String lasttname) {
+		lastnametxt.sendKeys(lasttname);
+
+	}
+	public void inputMobileNumber(String mobileNumber) {
+		mobilenumbertxt.sendKeys(mobileNumber);
+
+	}
+	public void inputEmail(String email) {
+		emailtxt.sendKeys(email);
+
+	}
+	public void inputPassword(String password) {
+		passwordtxt.sendKeys(password);
+
+	}
+	public void inputConfirmPassword(String confirmpassword) {
+		confirmpasswordtxt.sendKeys(confirmpassword);
+
+	}
 	public void submit() {
 		signup.click();
 		
 	}
+	
+
 
 }
 
